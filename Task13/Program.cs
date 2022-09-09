@@ -4,9 +4,17 @@ Console.Write("Введите число: ");
 
 while(true)
 {
-    string input = Console.ReadLine();
-    if(!input.Equals("exit"))
-       Console.WriteLine("Третья цифра числа {0} -> {1}", input, input[2]);    
+    string input = Console.ReadLine(); 
+    if(string.IsNullOrWhiteSpace(input)||!input.Equals("exit"))
+
+      if(string.IsNullOrWhiteSpace(input)||input.Length<3)
+      {
+         Console.WriteLine(" -> нет третьей цифры");
+      }
+      else 
+      {
+       Console.WriteLine($"Третья цифра числа {input} -> {input[2]}"); 
+      }   
 
     else
 
